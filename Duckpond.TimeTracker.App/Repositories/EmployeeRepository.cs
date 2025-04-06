@@ -1,40 +1,32 @@
 namespace Duckpond.TimeTracker.App.Repositories;
 
 [Service(ServiceLifetime.Scoped)]
-public class EmployeeRepository : IRepository<Employee>
+public class EmployeeRepository : GenericRepository<Employee>
 {
-    private IList<Employee> Employees { get; set; } = new List<Employee>();
+    private readonly string _filepath;
 
-    public Employee? GetById(int id)
+    public EmployeeRepository(IConfiguration configuration)
     {
-        return Employees.FirstOrDefault(e => e.Id == id);
+        _filepath = Path.Combine(
+            configuration["DataDictionary"] ?? throw new ArgumentNullException("Could not find DataDictionary."),
+            "employee.json");
+        var directory = Path.GetDirectoryName(_filepath);
+        if (directory is not null && !Directory.Exists(directory))
+        {
+            Directory.CreateDirectory(directory);
+        }
+        Load();
     }
 
-    public IEnumerable<Employee> GetAll()
+    public sealed override void Load()
     {
-        return Employees;
+        if (!File.Exists(_filepath)) return;
+        Models = JsonSerializer.Deserialize<List<Employee>>(File.ReadAllText(_filepath)) ?? new List<Employee>();
     }
 
-    public void Add(Employee model)
+    public override void Save()
     {
-        Employees.Add(model);
-    }
-
-    public void Update(Employee model)
-    {
-        Employees.Remove(model);
-        Employees.Add(model);
-    }
-
-    public void Delete(int id)
-    {
-        var employee = GetById(id);
-        if (employee is null) return;
-        Delete(employee);
-    }
-
-    public void Delete(Employee model)
-    {
-        Employees.Remove(model);
+        var json = JsonSerializer.Serialize(Models);
+        File.WriteAllText(_filepath, json);
     }
 }

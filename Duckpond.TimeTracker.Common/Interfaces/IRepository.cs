@@ -8,4 +8,6 @@ public interface IRepository<TModel>
     void Update(TModel model);
     void Delete(int id);
     void Delete(TModel model);
+    abstract void  Load();
+    abstract void Save();
 }

@@ -26,8 +26,8 @@
                                   @bind-Value="ViewModel!.Employee.EmplyeeNumber" For="@(() => ViewModel!.Employee.EmplyeeNumber)"/>
                 </MudCardContent>
                 <MudCardActions Class="d-flex justify-end gap-4">
-                    <MudButton Variant="Variant.Outlined" Color="Color.Error">Cancel</MudButton>
-                    <MudButton Variant="Variant.Filled" Color="Color.Primary">Save</MudButton>
+                    <MudButton Variant="Variant.Outlined" Color="Color.Error" OnClick="ViewModel!.CancelEdit">Cancel</MudButton>
+                    <MudButton Variant="Variant.Filled" Color="Color.Primary" OnClick="ViewModel!.SaveAsync">Save</MudButton>
                 </MudCardActions>
             </MudCard>
         </EditForm>
