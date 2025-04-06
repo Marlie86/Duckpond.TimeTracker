@@ -1,0 +1,35 @@
+@page "/settings/employee"
+@inherits BaseView<EmployeeSettingsViewModel>
+
+@if (ViewModel is not null)
+{
+    <MudPaper Class="pa-4">
+        <EditForm Model="@ViewModel?.Employee">
+
+            <MudCard Elevation="0">
+                <MudCardHeader>
+                    <CardHeaderContent>
+                        <MudText Typo="Typo.h4">Employee data</MudText>
+                    </CardHeaderContent>
+                </MudCardHeader>
+                <MudCardContent>
+                    <MudTextField Class="mb-2" Label="First name"
+                                  @bind-Value="ViewModel!.Employee.FirstName" For="@(() => ViewModel!.Employee.FirstName)"/>
+
+                    <MudTextField Class="my-2" Label="Last name"
+                                  @bind-Value="ViewModel!.Employee.LastName" For="@(() => ViewModel!.Employee.LastName)"/>
+
+                    <MudTextField Class="my-2" Label="EMail address"
+                                  @bind-Value="ViewModel!.Employee.Email" For="@(() => ViewModel!.Employee.Email)"/>
+
+                    <MudTextField Class="my-2" Label="Emplyee number"
+                                  @bind-Value="ViewModel!.Employee.EmplyeeNumber" For="@(() => ViewModel!.Employee.EmplyeeNumber)"/>
+                </MudCardContent>
+                <MudCardActions Class="d-flex justify-end gap-4">
+                    <MudButton Variant="Variant.Outlined" Color="Color.Error">Cancel</MudButton>
+                    <MudButton Variant="Variant.Filled" Color="Color.Primary">Save</MudButton>
+                </MudCardActions>
+            </MudCard>
+        </EditForm>
+    </MudPaper>
+}

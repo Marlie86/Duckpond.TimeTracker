@@ -1,0 +1,48 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Duckpond.TimeTracker.Server", "Duckpond.TimeTracker.Server\Duckpond.TimeTracker.Server.csproj", "{4D33CFC7-B7C8-4622-AE3C-3F06F66BC989}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_Solution Items", "_Solution Items", "{A4DED0A4-EFA4-4679-9CDB-11987289E98D}"
+	ProjectSection(SolutionItems) = preProject
+		compose.yaml = compose.yaml
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{71799EAE-5AE0-44C7-B3EB-C50C62C7AAE3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "App", "App", "{4A2F1AB3-50D8-44D1-BB6D-308A7CD3BCC8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Duckpond.TimeTracker.Common", "Duckpond.TimeTracker.Common\Duckpond.TimeTracker.Common.csproj", "{44E12615-3116-4A12-9506-40E4ECF9B887}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Duckpond.TimeTracker.App", "Duckpond.TimeTracker.App\Duckpond.TimeTracker.App.csproj", "{1B5EF465-5F20-4BA9-B1B8-CF3A34B88CA9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Duckpond.TimeTracker.App.Gui", "Duckpond.TimeTracker.App.Gui\Duckpond.TimeTracker.App.Gui.csproj", "{B5CE8484-1DBA-4B76-892A-0DEC96DCBB9D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4D33CFC7-B7C8-4622-AE3C-3F06F66BC989}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4D33CFC7-B7C8-4622-AE3C-3F06F66BC989}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4D33CFC7-B7C8-4622-AE3C-3F06F66BC989}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4D33CFC7-B7C8-4622-AE3C-3F06F66BC989}.Release|Any CPU.Build.0 = Release|Any CPU
+		{44E12615-3116-4A12-9506-40E4ECF9B887}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{44E12615-3116-4A12-9506-40E4ECF9B887}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{44E12615-3116-4A12-9506-40E4ECF9B887}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{44E12615-3116-4A12-9506-40E4ECF9B887}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1B5EF465-5F20-4BA9-B1B8-CF3A34B88CA9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1B5EF465-5F20-4BA9-B1B8-CF3A34B88CA9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1B5EF465-5F20-4BA9-B1B8-CF3A34B88CA9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1B5EF465-5F20-4BA9-B1B8-CF3A34B88CA9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B5CE8484-1DBA-4B76-892A-0DEC96DCBB9D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B5CE8484-1DBA-4B76-892A-0DEC96DCBB9D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B5CE8484-1DBA-4B76-892A-0DEC96DCBB9D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B5CE8484-1DBA-4B76-892A-0DEC96DCBB9D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{44E12615-3116-4A12-9506-40E4ECF9B887} = {71799EAE-5AE0-44C7-B3EB-C50C62C7AAE3}
+		{1B5EF465-5F20-4BA9-B1B8-CF3A34B88CA9} = {4A2F1AB3-50D8-44D1-BB6D-308A7CD3BCC8}
+		{B5CE8484-1DBA-4B76-892A-0DEC96DCBB9D} = {4A2F1AB3-50D8-44D1-BB6D-308A7CD3BCC8}
+	EndGlobalSection
+EndGlobal

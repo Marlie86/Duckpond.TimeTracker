@@ -1,0 +1,45 @@
+@using System.Runtime.Loader
+@typeparam TViewModel where TViewModel :  BaseViewModel
+@implements IDisposable
+@implements IAsyncDisposable
+@inject IServiceProvider ServiceProvider
+@inject ILogger<TViewModel> Logger
+
+@code {
+    protected TViewModel? ViewModel { get; private set; } = null;
+
+    protected override void OnInitialized()
+    {
+        // Try find view model.
+        ViewModel = ServiceProvider.GetService(typeof(TViewModel)) as TViewModel;
+        if (ViewModel is null)
+        {
+            Logger.LogWarning("Could not find view model of type {0}", typeof(TViewModel).Name);
+        }
+
+        if (ViewModel is not null)
+        {
+            ViewModel.PropertyChanged += OnViewModelPropertyChanged;
+        }
+        StateHasChanged();
+    }
+
+    public void Dispose()
+    {
+        if (ViewModel is not null)
+        {
+            ViewModel.PropertyChanged -= OnViewModelPropertyChanged;
+        }
+    }
+
+    private void OnViewModelPropertyChanged(object? sender, PropertyChangedEventArgs e)
+    {
+        StateHasChanged();
+    }
+
+    public async ValueTask DisposeAsync()
+    {
+        await Task.Run(Dispose);
+    }
+
+}

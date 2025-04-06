@@ -1,0 +1,6 @@
+﻿services:
+  duckpond.timetracker.server:
+    image: duckpond.timetracker.server
+    build:
+      context: .
+      dockerfile: Duckpond.TimeTracker.Server/Dockerfile

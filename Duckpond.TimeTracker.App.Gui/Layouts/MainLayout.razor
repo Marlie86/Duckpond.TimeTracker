@@ -1,0 +1,26 @@
+﻿@inherits LayoutComponentBase
+
+@* Required *@
+<MudThemeProvider IsDarkMode="true" />
+<MudPopoverProvider @rendermode="InteractiveServer" />
+
+@* Needed for dialogs *@
+<MudDialogProvider @rendermode="InteractiveServer" />
+
+@* Needed for snackbars *@
+<MudSnackbarProvider @rendermode="InteractiveServer" />
+
+<MudLayout>
+    <MudAppBar Elevation="1">
+        <MudIconButton Icon="@Icons.Material.Filled.Menu" Color="Color.Inherit" Edge="Edge.Start" OnClick="@DrawerToggle" />
+        <MudText Typo="Typo.h5" Class="ml-3">Duckpond TimeTracking</MudText>
+    </MudAppBar>
+    <MudDrawer @bind-Open="_drawerOpen" ClipMode="DrawerClipMode.Always" Elevation="2">
+        <MainNavigationMenu />
+    </MudDrawer>
+    <MudMainContent>
+        <MudContainer Class="mt-4" MaxWidth="MaxWidth.ExtraExtraLarge">
+            @Body
+        </MudContainer>
+    </MudMainContent>
+</MudLayout>
